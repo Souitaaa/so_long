@@ -1,6 +1,6 @@
 #include "so_long.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strcmp(char *s1, char *s2)
 {
 	size_t			i;
 	unsigned char	*us1;
@@ -9,7 +9,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	us1 = (unsigned char *)(s1);
 	us2 = (unsigned char *)(s2);
-	while ((us1[i] || us2[i]) && n > i)
+	while ((us1[i] || us2[i]))
 	{
 		if (us1[i] != us2[i])
 		{

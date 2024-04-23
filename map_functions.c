@@ -197,20 +197,21 @@ void freefun(char **ptr)
 	{
 		free(ptr[i++]);
 	}
+    //printf("%d", r);
 	free(ptr);
 }
-int main(int argc, char *argv[])
-{
-    t_data data;
-    //data.width = 0;
+// int main(int argc, char *argv[])
+// {
+//     t_data data;
+//     //data.width = 0;
 
-    (void)argc;
-    map_check(argv[1], &data);
-    map_width(argv[1], &data);
-    map_arr(argv[1], &data);
-    check_map_border(&data);
-    // printf("%d", data.height);
-    // printf("%d", data.width);
-    freefun(data.map);
-    return 0;
-}
+//     (void)argc;
+//     map_check(argv[1], &data);
+//     map_width(argv[1], &data);
+//     map_arr(argv[1], &data);
+//     check_map_border(&data);
+//     // printf("%d", data.height);
+//     // printf("%d", data.width);
+//     freefun(data.map);
+//     return 0;
+// }
