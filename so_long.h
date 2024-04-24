@@ -28,6 +28,7 @@ size_t ft_count_digits(int number);
 char *ft_itoa(int number);
 int ft_putstr(char *str);
 int	ft_putchar(int c);
+void	*ft_memset(void *b, int c, size_t len);
 
 
 typedef struct data {
@@ -58,6 +59,7 @@ int moves;
 
 } t_data;
 
+
 void store_content(t_data *data);
 void check_exist_items(t_data *data);
 void map_check(char *path, t_data *data);
@@ -81,6 +83,7 @@ void print_up(t_data *data);
 void print_down(t_data *data);
 void print_left(t_data *data);
 void print_right(t_data *data);
+int keycode_print(int keycode ,t_data *data);
 
 
 

@@ -28,9 +28,9 @@ void store_content(t_data *data)
         write(1, "map is not valid", 17);
         exit(1);
     }
-        printf("E = %d\n",data->exit1);
-        printf("C = %d\n",data->collectables);
-        printf("P = %d\n",data->player);
+        // printf("E = %d\n",data->exit1);
+        // printf("C = %d\n",data->collectables);
+        // printf("P = %d\n",data->player);
         
 }
 

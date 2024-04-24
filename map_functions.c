@@ -81,8 +81,8 @@ void map_arr(char *path, t_data *data)
     int i = 0;
 
 
-    printf("H = %d\n",data->height);
-    printf("w = %d\n",data->width);
+    //printf("H = %d\n",data->height);
+    //printf("w = %d\n",data->width);
     // char *line ;
 
     // printf("%d\n",data->height);
