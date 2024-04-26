@@ -1,11 +1,10 @@
 #include "so_long.h"
-       #include <string.h>
+#include <string.h>
 
-
-char	*ft_strrchr(const char *s, int c)
+char *ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*str;
+	int i;
+	char *str;
 
 	str = (char *)s;
 	i = 0;

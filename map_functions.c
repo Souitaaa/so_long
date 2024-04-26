@@ -80,10 +80,9 @@ void map_arr(char *path, t_data *data)
     int fd;
     int i = 0;
 
-
-    //printf("H = %d\n",data->height);
-    //printf("w = %d\n",data->width);
-    // char *line ;
+    // printf("H = %d\n",data->height);
+    // printf("w = %d\n",data->width);
+    //  char *line ;
 
     // printf("%d\n",data->height);
     fd = open(path, O_RDONLY);
@@ -132,6 +131,7 @@ void map_arr2(char *path, t_data *data)
         // printf("%s", data->map2[i]);
         i++;
     }
+    data->map2[i] = NULL;
     close(fd);
 }
 
@@ -161,44 +161,42 @@ void check_map_border(t_data *data)
         i++;
     }
 
-
-
     // int	i;
-	// int	j;
+    // int	j;
 
-	// i = 0;
-	// j = 0;
-	// while (i < data->height)
-	// {
-	// 	j = 0;
-	// 	while (j < data->width)
-	// 	{
-	// 		if ((data->map[0][j] != '1' || data->map[data->height - 1][j] != '1'))
-	// 		{
-	// 			write(1, "map border is not correct", 26);
-	// 			exit(1);
-	// 		}
-	// 		if (data->map[i][0] != '1' || data->map[i][data->width - 1] != '1')
-	// 		{
-	// 			 write(1, "map border is not correct", 26);
-	// 			exit(1);
-	// 		}
-	// 		j++;
-	// 	}
-	// 	i++;
-	// }
+    // i = 0;
+    // j = 0;
+    // while (i < data->height)
+    // {
+    // 	j = 0;
+    // 	while (j < data->width)
+    // 	{
+    // 		if ((data->map[0][j] != '1' || data->map[data->height - 1][j] != '1'))
+    // 		{
+    // 			write(1, "map border is not correct", 26);
+    // 			exit(1);
+    // 		}
+    // 		if (data->map[i][0] != '1' || data->map[i][data->width - 1] != '1')
+    // 		{
+    // 			 write(1, "map border is not correct", 26);
+    // 			exit(1);
+    // 		}
+    // 		j++;
+    // 	}
+    // 	i++;
+    // }
 }
 void freefun(char **ptr)
 {
     int i;
-    
+
     i = 0;
-	while (ptr[i])
-	{
-		free(ptr[i++]);
-	}
-    //printf("%d", r);
-	free(ptr);
+    while (ptr[i])
+    {
+        free(ptr[i++]);
+    }
+    // printf("%d", r);
+    free(ptr);
 }
 // int main(int argc, char *argv[])
 // {

@@ -7,6 +7,14 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+#define UP_KEY 65362
+#define LEFT_KEY 65361
+#define DOWN_KEY 65364
+#define RIGHT_KEY 65363
+#define A 97
+#define W 119 
+#define S 115
+#define D 100 
 
 
 
@@ -54,9 +62,9 @@ void *enemy;
 void *trophy;
 int  image_height;
 int  image_width;
-int moves;
-
-
+int moves ;
+int visited;
+int coins_found;
 } t_data;
 
 
@@ -78,14 +86,15 @@ void up(t_data *data);
 void down(t_data *data);
 void left(t_data *data);
 void right(t_data *data);
-void check_file(t_data *xcheck);
+void check_file(t_data *file);
 void print_up(t_data *data);
 void print_down(t_data *data);
 void print_left(t_data *data);
 void print_right(t_data *data);
 int keycode_print(int keycode ,t_data *data);
-
-
+int draw_map(t_data *data);
+int move_player(int keycode , t_data *data);
+void flood_fill(t_data *data);
 
 // void freefun(char **ptr
-#endif 
+#endif

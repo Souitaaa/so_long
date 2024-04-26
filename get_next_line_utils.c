@@ -6,15 +6,15 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/07 17:29:30 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/18 18:33:56 by csouita          ###   ########.fr       */
+/*   Updated: 2024/04/25 20:02:23 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	*ft_strchr(const char *s, int c)
+char *ft_strchr(const char *s, int c)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	if (!s)
@@ -32,9 +32,9 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-size_t	ft_strlen(const char *s)
+size_t ft_strlen(const char *s)
 {
-	size_t	i;
+	size_t i;
 
 	if (!s)
 		return (0);
@@ -44,10 +44,10 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void *ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*s;
-	unsigned char	*d;
+	unsigned char *s;
+	unsigned char *d;
 
 	s = (unsigned char *)src;
 	d = (unsigned char *)dest;
@@ -60,9 +60,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-char	*ft_strdup(char *s)
+char *ft_strdup(char *s)
 {
-	char	*str;
+	char *str;
 
 	str = malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (!str)
@@ -72,11 +72,11 @@ char	*ft_strdup(char *s)
 	return (str);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char *ft_strjoin(char *s1, char *s2)
 {
-	char	*str;
-	int		ls1;
-	int		ls2;
+	char *str;
+	int ls1;
+	int ls2;
 
 	if (!s1)
 		return (ft_strdup(s2));

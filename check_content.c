@@ -1,13 +1,13 @@
 #include "so_long.h"
-# include <stdio.h>
+#include <stdio.h>
 
 void store_content(t_data *data)
 {
     int i = 0;
     int j = 0;
-    data->collectables = 0 ;
-    data->player = 0 ;
-    data->exit1 = 0 ;
+    data->collectables = 0;
+    data->player = 0;
+    data->exit1 = 0;
     while (i < data->height)
     {
         j = 0;
@@ -28,10 +28,9 @@ void store_content(t_data *data)
         write(1, "map is not valid", 17);
         exit(1);
     }
-        // printf("E = %d\n",data->exit1);
-        // printf("C = %d\n",data->collectables);
-        // printf("P = %d\n",data->player);
-        
+    // printf("E = %d\n",data->exit1);
+    // printf("C = %d\n",data->collectables);
+    // printf("P = %d\n",data->player);
 }
 
 void check_exist_items(t_data *data)

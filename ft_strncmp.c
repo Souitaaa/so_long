@@ -1,10 +1,10 @@
 #include "so_long.h"
 
-int	ft_strcmp(char *s1, char *s2)
+int ft_strcmp(char *s1, char *s2)
 {
-	size_t			i;
-	unsigned char	*us1;
-	unsigned char	*us2;
+	size_t i;
+	unsigned char *us1;
+	unsigned char *us2;
 
 	i = 0;
 	us1 = (unsigned char *)(s1);

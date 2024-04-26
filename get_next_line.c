@@ -6,16 +6,16 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 18:49:03 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/18 18:33:52 by csouita          ###   ########.fr       */
+/*   Updated: 2024/04/25 20:02:26 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	*all_buffer(char *str, int fd)
+char *all_buffer(char *str, int fd)
 {
-	char		*buffer;
-	ssize_t		count;
+	char *buffer;
+	ssize_t count;
 
 	buffer = malloc((size_t)BUFFER_SIZE + 1);
 	if (buffer == NULL)
@@ -26,17 +26,17 @@ char	*all_buffer(char *str, int fd)
 		if (count == -1)
 			return (free(str), free(buffer), NULL);
 		if (count == 0)
-			break ;
+			break;
 		buffer[count] = '\0';
 		str = ft_strjoin(str, buffer);
 	}
 	return (free(buffer), str);
 }
 
-char	*get_line(char *saved_s)
+char *get_line(char *saved_s)
 {
-	char	*line;
-	size_t	i;
+	char *line;
+	size_t i;
 
 	i = 0;
 	if (!*saved_s)
@@ -59,11 +59,11 @@ char	*get_line(char *saved_s)
 	return (line);
 }
 
-char	*left_line(char *saved_s, char *line)
+char *left_line(char *saved_s, char *line)
 {
-	size_t	i;
-	size_t	j;
-	char	*new_str;
+	size_t i;
+	size_t j;
+	char *new_str;
 
 	i = 0;
 	j = 0;
@@ -87,10 +87,10 @@ char	*left_line(char *saved_s, char *line)
 	return (new_str);
 }
 
-char	*get_next_line(int fd)
+char *get_next_line(int fd)
 {
-	static char	*saved_s;
-	char		*line;
+	static char *saved_s;
+	char *line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);

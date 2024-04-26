@@ -1,6 +1,8 @@
 NAME = so_long
 CC = cc -Wall -Wextra -Werror #-fsanitize=address -g
-SRC = map_functions.c get_next_line.c get_next_line_utils.c ft_strlen2.c window.c so_long.c ft_strncmp.c ft_strrchr.c check_content.c draw_items.c moves.c print_moves.c ft_putstr.c ft_putchar.c ft_itoa.c keycode.c ft_memset.c
+SRC = utils.c map_functions.c get_next_line.c get_next_line_utils.c ft_strlen2.c \
+  ft_strncmp.c ft_strrchr.c check_content.c draw_items.c moves.c print_moves.c \
+ ft_putstr.c ft_putchar.c ft_itoa.c ft_memset.c so_long.c #flood_fill.c 
 OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
@@ -9,7 +11,7 @@ all: $(NAME)
 	@echo "✅"
 
 $(NAME): $(OBJ)
-	@$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+	@$(CC)  $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
 clean:
 	@rm -f $(OBJ)
