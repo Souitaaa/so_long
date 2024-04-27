@@ -24,6 +24,7 @@ void map_check(char *path, t_data *data)
         free(line);
         line = get_next_line(fd);
     }
+    free(line);
     data->height = i;
     close(fd);
     // printf("%d\n",i);
@@ -80,11 +81,6 @@ void map_arr(char *path, t_data *data)
     int fd;
     int i = 0;
 
-    // printf("H = %d\n",data->height);
-    // printf("w = %d\n",data->width);
-    //  char *line ;
-
-    // printf("%d\n",data->height);
     fd = open(path, O_RDONLY);
     if (fd < 0)
     {
@@ -95,40 +91,36 @@ void map_arr(char *path, t_data *data)
     data->map = malloc((data->height + 1) * sizeof(char *));
     if (!data->map)
         return;
-    // printf("%d\n",data->height);
-    //    line = get_next_line(fd);
     while (i < data->height)
     {
-        // printf("%d\n",data->height);
-        // printf("%d\n",i);
         data->map[i] = get_next_line(fd);
-        // if (!get_next_line(fd))
-        // break;
-        // printf("%s",data->map[i]);
         i++;
     }
     data->map[i] = NULL;
     close(fd);
+    map_arr2(path,data);
 }
 void map_arr2(char *path, t_data *data)
 {
-    int fd;
+        int fd;
     int i = 0;
 
     fd = open(path, O_RDONLY);
     if (fd < 0)
     {
         write(1, "map file does not exist", 24);
+        close(fd);
         exit(1);
     }
-    data->map2 = malloc(data->height * sizeof(char *));
+    data->map2 = malloc((data->height + 1) * sizeof(char *));
     if (!data->map2)
         return;
-
     while (i < data->height)
     {
+        // printf("%d\n",data->height);
+        // printf("%d",i);
         data->map2[i] = get_next_line(fd);
-        // printf("%s", data->map2[i]);
+       // printf("%s",data->map2[i]);
         i++;
     }
     data->map2[i] = NULL;

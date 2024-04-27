@@ -15,6 +15,8 @@
 #define W 119 
 #define S 115
 #define D 100 
+#define Q 113
+#define ESC 65307
 
 
 
@@ -65,6 +67,8 @@ int  image_width;
 int moves ;
 int visited;
 int coins_found;
+int exit_height ;
+int exit_width ;
 } t_data;
 
 
@@ -73,7 +77,6 @@ void check_exist_items(t_data *data);
 void map_check(char *path, t_data *data);
 void map_width(char *path, t_data *data);
 void map_arr(char *path, t_data *data);
-void map_arr2(char *path, t_data *data);
 void check_map_border(t_data *data);
 void freefun(char **ptr);
 void check_path(char *path);
@@ -94,7 +97,10 @@ void print_right(t_data *data);
 int keycode_print(int keycode ,t_data *data);
 int draw_map(t_data *data);
 int move_player(int keycode , t_data *data);
-void flood_fill(t_data *data);
-
-// void freefun(char **ptr
+void flood_fill(t_data *data, int i, int j);
+void flood_fill_checker(t_data *data);
+void freefun(char **ptr);
+void map_arr2(char *path, t_data *data);
+int all_collected(t_data *data);
+void exit_position(t_data *data);
 #endif

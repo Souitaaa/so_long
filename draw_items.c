@@ -24,6 +24,10 @@ void map_draw(t_data *data, int i, int j)
         mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, data->floor, j * 60, i * 60);
     else if (data->map[i][j] == 'E')
         mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, data->exit, j * 60, i * 60);
+    // if (all_collected(data)){
+    //     exit(0);
+    // mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, data->exit, j * 60, i * 60);
+    // }
     else if (data->map[i][j] == 'C')
         mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, data->trophy, j * 60, i * 60);
     else if (data->map[i][j] == 'P')

@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:43:18 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/26 14:11:20 by csouita          ###   ########.fr       */
+/*   Updated: 2024/04/26 22:37:45 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ int draw_map(t_data *data)
 
             // printf("i -----> %d \n", i);
             // printf("j -----> %d \n", j);
-            mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, data->floor, j * 60, i * 60);
 
             map_draw(data, i, j);
             j++;
