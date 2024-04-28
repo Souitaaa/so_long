@@ -14,6 +14,7 @@ void fill_items(t_data *data)
     check_file(data->floor);
     data->trophy = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/ballon d'or.xpm", &data->image_width, &data->image_height);
     check_file(data->trophy);
+    data->exit_win = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/exit_open.xpm", &data->image_width, &data->image_height);
 }
 void map_draw(t_data *data, int i, int j)
 {
@@ -23,7 +24,13 @@ void map_draw(t_data *data, int i, int j)
     else if (data->map[i][j] == '0')
         mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, data->floor, j * 60, i * 60);
     else if (data->map[i][j] == 'E')
-        mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, data->exit, j * 60, i * 60);
+    {
+        if(all_collected(data))
+            mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, data->exit_win, j * 60, i * 60);
+        else
+            mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, data->exit, j * 60, i * 60);
+
+    }
     // if (all_collected(data)){
     //     exit(0);
     // mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, data->exit, j * 60, i * 60);
@@ -33,7 +40,9 @@ void map_draw(t_data *data, int i, int j)
     else if (data->map[i][j] == 'P')
         mlx_put_image_to_window(data->mlx_ptr, data->mlx_window, data->messi, j * 60, i * 60);
 }
-void close_window(t_data *data)
+int close_window(t_data *data)
 {
     mlx_destroy_window(data->mlx_ptr, data->mlx_window);
+    exit(0);
+    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:43:38 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/27 03:54:25 by csouita          ###   ########.fr       */
+/*   Updated: 2024/04/28 16:53:06 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ int main(int ac, char *av[])
     data.moves = 0;
     data.player_height = 0;
     data.player_width = 0;
-    // data.mlx_ptr = mlx_init();
     ft_memset(&data, 0, sizeof(int));
     data.height = 0;
     check_path(av[1]);
@@ -100,7 +99,7 @@ int main(int ac, char *av[])
     flood_fill(&data, data.player_height, data.player_width);
     flood_fill_checker(&data);
     mlx_key_hook(data.mlx_window, move_player, &data);
-    // mlx_loop_hook(data.mlx_ptr, draw_map, &data);
     draw_map(&data);
+    mlx_hook(data.mlx_window, 17, 0, close_window, &data);
     mlx_loop(data.mlx_ptr);
 }
