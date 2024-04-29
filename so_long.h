@@ -63,6 +63,11 @@ void *floor;
 void *exit;
 void *enemy;
 void *trophy;
+void *ultimate_player;
+void *player_right;
+void *player_left;
+int     left;
+int     right;
 int  image_height;
 int  image_width;
 int moves ;
@@ -70,6 +75,7 @@ int visited;
 int coins_found;
 int exit_height ;
 int exit_width ;
+int keycode;
 } t_data;
 
 
@@ -104,4 +110,5 @@ void freefun(char **ptr);
 void map_arr2(char *path, t_data *data);
 int all_collected(t_data *data);
 void exit_position(t_data *data);
+void map_rectangle(t_data *data);
 #endif

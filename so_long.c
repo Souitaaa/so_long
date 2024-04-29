@@ -6,18 +6,30 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:43:38 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/28 16:53:06 by csouita          ###   ########.fr       */
+/*   Updated: 2024/04/28 21:39:24 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int keycode_print(int keycode, t_data *data)
+// int keycode_print(int keycode, t_data *data)
+// {
+//     (void)data;
+//     printf("%d\n", keycode);
+//     return 0;
+// }
+void map_rectangle(t_data *data)
 {
-    (void)data;
-    printf("%d\n", keycode);
-    return 0;
+    // printf("H = %d",data->height);
+    // printf("W = %d",data->width);
+
+    if (data->height == data->width)
+    {
+        write(1, "map is not rectangular", 23);
+        exit(1);
+    }
 }
+
 void exit_position(t_data *data)
 {
     int i = 0;
@@ -88,6 +100,7 @@ int main(int ac, char *av[])
     check_path(av[1]);
     map_check(av[1], &data);
     map_width(av[1], &data);
+    map_rectangle(&data);
     map_arr(av[1], &data);
     check_map_border(&data);
     store_content(&data);

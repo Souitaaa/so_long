@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 13:29:03 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/27 01:08:09 by csouita          ###   ########.fr       */
+/*   Updated: 2024/04/28 21:39:33 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void flood_fill_checker(t_data *data)
 
 	while (i < data->height)
 	{
-		printf("%s\n", data->map2[i]);
+		// printf("%s\n", data->map2[i]);
 		// printf("%d\n", i);
 
 		j = 0;
