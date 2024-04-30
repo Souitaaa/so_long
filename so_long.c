@@ -6,48 +6,27 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:43:38 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/28 21:39:24 by csouita          ###   ########.fr       */
+/*   Updated: 2024/04/29 23:32:14 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-// int keycode_print(int keycode, t_data *data)
-// {
-//     (void)data;
-//     printf("%d\n", keycode);
-//     return 0;
-// }
 void map_rectangle(t_data *data)
 {
-    // printf("H = %d",data->height);
-    // printf("W = %d",data->width);
-
+    int i;
+    i = 0;
     if (data->height == data->width)
     {
         write(1, "map is not rectangular", 23);
-        exit(1);
-    }
-}
-
-void exit_position(t_data *data)
-{
-    int i = 0;
-    int j = 0;
-
-    while (i < data->height)
-    {
-        j = 0;
-        while (j < data->width)
+        while (++i < data->height)
         {
-            if (data->map[i][j] == 'E')
-            {
-                data->exit_height = i;
-                data->exit_width = j;
-            }
-            j++;
+            // free(data->map2[i]);
+            free(data->map[i]);
         }
-        i++;
+        // free(data->map2);
+        free(data->map);
+        exit(1);
     }
 }
 int all_collected(t_data *data)
@@ -71,9 +50,8 @@ int all_collected(t_data *data)
 
 int move_player(int keycode, t_data *data)
 {
-    // printf("proob %d",keycode);
     if (keycode == Q || keycode == ESC)
-        exit(0);
+        close_window(data);
     if (keycode == UP_KEY || keycode == W)
         print_up(data);
     if (keycode == LEFT_KEY || keycode == A)
@@ -84,7 +62,6 @@ int move_player(int keycode, t_data *data)
         print_right(data);
     player_position(data);
     draw_map(data);
-
     return 0;
 }
 
@@ -107,7 +84,6 @@ int main(int ac, char *av[])
     check_exist_items(&data);
     check_file(&data);
     fill_items(&data);
-    draw_map(&data);
     player_position(&data);
     flood_fill(&data, data.player_height, data.player_width);
     flood_fill_checker(&data);

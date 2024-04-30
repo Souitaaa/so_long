@@ -12,6 +12,7 @@ void print_up(t_data *data)
         ft_putstr(res);
         write(1, "\nyou won", 8);
         free(res);
+        close_window(data);
         exit(0);
     }
     else if (data->map[data->player_height - 1][data->player_width] != '1' && data->map[data->player_height - 1][data->player_width] != 'E')
@@ -37,6 +38,7 @@ void print_down(t_data *data)
         ft_putstr(res);
         write(1, "\nyou won", 8);
         free(res);
+        close_window(data);
         exit(0);
     }
     else if (data->map[data->player_height + 1][data->player_width] != '1' && data->map[data->player_height + 1][data->player_width] != 'E')
@@ -62,6 +64,7 @@ void print_left(t_data *data)
         ft_putstr(res);
         write(1, "\nyou won", 8);
         free(res);
+        close_window(data);
         exit(0);
     }
     else if (data->map[data->player_height][data->player_width - 1] != '1' && data->map[data->player_height][data->player_width - 1] != 'E')
@@ -87,6 +90,7 @@ void print_right(t_data *data)
         ft_putstr(res);
         write(1, "\nyou won", 8);
         free(res);
+        close_window(data);
         exit(0);
     }
     else if (data->map[data->player_height][data->player_width + 1] != '1' && data->map[data->player_height][data->player_width + 1] != 'E')

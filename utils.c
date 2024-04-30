@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:43:18 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/29 01:44:19 by csouita          ###   ########.fr       */
+/*   Updated: 2024/04/30 00:20:07 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,14 @@
 
 void check_path(char *path)
 {
-    // int res;
-    
     char *str;
-    
-    //printf("jjjjjjjjjjjjjjjjj");
+
     str = ft_strrchr(path, '.');
-    // printf("%s\n",str);
     if (str == NULL)
     {
         write(1, "no .ber file", 13);
         exit(1);
     }
-    // res = ;
-    // printf("%d",res);
     if (ft_strcmp(".ber", str) != 0)
     {
         write(1, "no .ber file", 13);
@@ -36,9 +30,10 @@ void check_path(char *path)
 }
 void player_position(t_data *data)
 {
-    int i = 0;
-    int j = 0;
+    int i;
+    int j;
 
+    i = 0;
     while (i < data->height)
     {
         j = 0;
@@ -55,8 +50,6 @@ void player_position(t_data *data)
         }
         i++;
     }
-    printf("%d\n",data->player_height);
-    printf("%d",data->player_width);
 }
 void check_file(t_data *file)
 {
@@ -70,33 +63,21 @@ void check_file(t_data *file)
 int draw_map(t_data *data)
 {
 
-    int i = 0;
+    int i;
     int j;
 
+    i = 0;
     mlx_clear_window(data->mlx_ptr, data->mlx_window);
 
     while (i < data->height)
     {
         j = 0;
-        // printf("\n--------------------------\n");
         while (j < data->width)
         {
-
-            // printf("i -----> %d \n", i);
-            // printf("j -----> %d \n", j);
-
             map_draw(data, i, j);
             j++;
         }
         i++;
     }
-    // i = 0;
-    // while (i < 5)
-    // {
-    //     printf("%s\n",data->map[i]);
-    //     i++;
-    // }
-
     return 0;
-    // draw_map(data);
 }
