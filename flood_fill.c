@@ -6,20 +6,21 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 13:29:03 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/29 20:32:25 by csouita          ###   ########.fr       */
+/*   Updated: 2024/04/30 18:26:15 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void flood_fill(t_data *data, int i, int j)
+void	flood_fill(t_data *data, int i, int j)
 {
-	if (data->map2[i][j] != '0' && data->map2[i][j] != 'C' && data->map2[i][j] != 'E' && data->map2[i][j] != 'P')
-		return;
+	if (data->map2[i][j] != '0' && data->map2[i][j] != 'C'
+		&& data->map2[i][j] != 'E' && data->map2[i][j] != 'P')
+		return ;
 	else if (data->map2[i][j] == 'E')
 	{
 		data->map2[i][j] = '+';
-		return;
+		return ;
 	}
 	data->map2[i][j] = 'X';
 	flood_fill(data, i + 1, j);
@@ -28,10 +29,10 @@ void flood_fill(t_data *data, int i, int j)
 	flood_fill(data, i, j - 1);
 }
 
-void flood_fill_checker(t_data *data)
+void	flood_fill_checker(t_data *data)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < data->height)
@@ -42,6 +43,7 @@ void flood_fill_checker(t_data *data)
 			if (data->map2[i][j] == 'E' || data->map2[i][j] == 'C')
 			{
 				write(1, "map is unplayable", 18);
+				close_window(data);
 				exit(1);
 			}
 			j++;

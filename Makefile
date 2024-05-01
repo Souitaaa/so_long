@@ -1,8 +1,8 @@
 NAME = so_long
-CC = cc -Wall -Wextra -Werror #-fsanitize=address -g
+CC = cc -Wall -Wextra -Werror #-fsanitize=address -g3
 SRC = utils.c map_functions.c get_next_line.c get_next_line_utils.c ft_strlen2.c \
   ft_strncmp.c ft_strrchr.c check_content.c draw_items.c moves.c print_moves.c \
- ft_putstr.c ft_putchar.c ft_itoa.c ft_memset.c so_long.c flood_fill.c 
+ ft_putstr.c ft_putchar.c ft_itoa.c ft_memset.c so_long.c flood_fill.c free.c
 OBJ = $(SRC:.c=.o)
 all: $(NAME)
 

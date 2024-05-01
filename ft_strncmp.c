@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/30 17:50:26 by csouita           #+#    #+#             */
+/*   Updated: 2024/04/30 17:50:27 by csouita          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-int ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-	size_t i;
-	unsigned char *us1;
-	unsigned char *us2;
+	size_t			i;
+	unsigned char	*us1;
+	unsigned char	*us2;
 
 	i = 0;
 	us1 = (unsigned char *)(s1);
