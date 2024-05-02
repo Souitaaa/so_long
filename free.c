@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:35:58 by csouita           #+#    #+#             */
-/*   Updated: 2024/05/01 22:54:06 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/02 02:30:27 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,27 @@ int	close_window(t_data *data)
 {
 	mlx_destroy_image(data->mlx_ptr, data->floor);
 	mlx_destroy_image(data->mlx_ptr, data->wall);
-	mlx_destroy_image(data->mlx_ptr, data->messi);
+	mlx_destroy_image(data->mlx_ptr, data->raven);
 	mlx_destroy_image(data->mlx_ptr, data->exit);
 	mlx_destroy_image(data->mlx_ptr, data->ultimate_player_right);
 	mlx_destroy_image(data->mlx_ptr, data->ultimate_player_left);
 	mlx_destroy_image(data->mlx_ptr, data->player_left);
 	mlx_destroy_image(data->mlx_ptr, data->player_right);
 	mlx_destroy_image(data->mlx_ptr, data->exit_win);
-	mlx_destroy_image(data->mlx_ptr, data->trophy);
+	mlx_destroy_image(data->mlx_ptr, data->flame);
 	mlx_destroy_window(data->mlx_ptr, data->mlx_window);
 	mlx_destroy_display(data->mlx_ptr);
 	free_map(data);
 	free(data->mlx_ptr);
 	exit(0);
 	return (0);
+}
+
+void	check_fd(int fd)
+{
+	if (fd < 0)
+	{
+		write(1, "map file does not exist", 24);
+		exit(1);
+	}
 }

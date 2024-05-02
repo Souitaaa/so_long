@@ -6,12 +6,11 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 16:34:47 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/30 18:22:27 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/02 02:24:58 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
 
 void	store_content(t_data *data)
 {

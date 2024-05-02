@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:43:38 by csouita           #+#    #+#             */
-/*   Updated: 2024/05/01 23:02:44 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/02 02:00:45 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ int	main(int ac, char *av[])
 	check_map_border(&data);
 	store_content(&data);
 	check_exist_items(&data);
-	// check_file(&data);
 	fill_items(&data);
 	player_position(&data);
 	flood_fill(&data, data.player_height, data.player_width);

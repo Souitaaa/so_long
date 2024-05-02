@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 18:09:36 by csouita           #+#    #+#             */
-/*   Updated: 2024/05/01 23:06:56 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/02 02:30:37 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,20 +64,20 @@ typedef struct data
 	int		player;
 	int		player_height;
 	int		player_width;
-	void	*messi;
+	void	*raven;
 	void	*exit_win;
 	void	*wall;
 	void	*floor;
 	void	*exit;
-	void	*trophy;
+	void	*flame;
 	void	*ultimate_player_right;
 	void	*ultimate_player_left;
 	void	*player_right;
 	void	*player_left;
 	int		left;
 	int		right;
-	int 	up;
-	int 	down;
+	int		up;
+	int		down;
 	int		image_height;
 	int		image_width;
 	int		moves;
@@ -105,12 +105,10 @@ void		print_up(t_data *data);
 void		print_down(t_data *data);
 void		print_left(t_data *data);
 void		print_right(t_data *data);
-int			keycode_print(int keycode, t_data *data);
 int			draw_map(t_data *data);
 int			move_player(int keycode, t_data *data);
 void		flood_fill(t_data *data, int i, int j);
 void		flood_fill_checker(t_data *data);
-void		freefun(char **ptr);
 void		map_arr2(char *path, t_data *data);
 int			all_collected(t_data *data);
 void		map_rectangle(t_data *data);
@@ -119,8 +117,16 @@ void		fill_items2(t_data *data);
 void		draw_player(t_data *data, int i, int j);
 void		you_won(t_data *data);
 void		free_map(t_data *data);
-void 		file_check(t_data *data);
-void 		files(t_data *data);
-
-
+void		check_fd(int fd);
+void		destroy_raven(t_data *data);
+void		destroy_flame(t_data *data);
+void		destroy_exit_win(t_data *data);
+void		destroy_player_right(t_data *data);
+void		destroy_player_left(t_data *data);
+void		destroy_ultimate_player_left(t_data *data);
+void		destroy_ultimate_player_right(t_data *data);
+void		destroy_exit(t_data *data);
+void		destroy_wall(t_data *data);
+void		destroy_floor(t_data *data);
+void		clear(t_data *data);
 #endif

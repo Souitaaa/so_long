@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:52:47 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/30 18:18:35 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/02 01:51:12 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,7 @@ void	map_check(char *path, t_data *data)
 
 	i = 0;
 	fd = open(path, O_RDONLY);
-	if (fd < 0)
-	{
-		write(1, "map file does not exist", 24);
-		exit(1);
-	}
+	check_fd(fd);
 	line = get_next_line(fd);
 	if (!line)
 	{
@@ -52,11 +48,7 @@ void	map_width(char *path, t_data *data)
 	i = 0;
 	w = 0;
 	fd = open(path, O_RDONLY);
-	if (fd < 0)
-	{
-		write(1, "map file does not exist", 24);
-		exit(1);
-	}
+	check_fd(fd);
 	line = get_next_line(fd);
 	w = ft_strlen2(line);
 	while (line != NULL)
