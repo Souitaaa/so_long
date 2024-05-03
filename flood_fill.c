@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 13:29:03 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/30 18:26:15 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/03 17:59:45 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	flood_fill_checker(t_data *data)
 		{
 			if (data->map2[i][j] == 'E' || data->map2[i][j] == 'C')
 			{
-				write(1, "map is unplayable", 18);
+				write(1, "Error\nmap is unplayable", 24);
 				close_window(data);
 				exit(1);
 			}

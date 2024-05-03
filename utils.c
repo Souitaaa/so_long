@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:43:18 by csouita           #+#    #+#             */
-/*   Updated: 2024/05/03 01:47:15 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/03 18:03:03 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	check_path(char *path)
 	str = ft_strrchr(path, '.');
 	if (str == NULL)
 	{
-		write(1, "no .ber file", 13);
+		write(1, "Error\nno .ber file", 19);
 		exit(1);
 	}
 	if (ft_strcmp(".ber", str) != 0)
 	{
-		write(1, "no .ber file", 13);
+		write(1, "Error\nno .ber file", 19);
 		exit(1);
 	}
 }

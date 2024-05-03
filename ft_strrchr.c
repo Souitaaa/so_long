@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:50:42 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/30 17:50:43 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/03 18:09:28 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,3 @@ char	*ft_strrchr(const char *s, int c)
 		return (NULL);
 	return (str + i);
 }
-// int main()
-// {
-// 	char *result ;
-// 	char *result2 ;
-// 	result = ft_strrchr("souita",'i');
-// 	result2 = strrchr("souita",'i');
-// 	printf("%s",result) ;
-// 	printf("%s-",result2) ;
-
-// 	return (0);
-// }

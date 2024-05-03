@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:50:26 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/30 17:50:27 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/03 18:00:30 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,3 @@ int	ft_strcmp(char *s1, char *s2)
 	}
 	return (0);
 }
-// int main ()
-// {
-//     printf("%c",ft_strncmp("souita0","sou",7));
-// }

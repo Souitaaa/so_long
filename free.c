@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:35:58 by csouita           #+#    #+#             */
-/*   Updated: 2024/05/03 02:25:02 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/03 18:00:10 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	check_fd(int fd)
 {
 	if (fd < 0)
 	{
-		write(1, "map file does not exist", 24);
+		write(1, "Error\nmap file does not exist", 30);
 		exit(1);
 	}
 }

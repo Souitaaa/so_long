@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:46:48 by csouita           #+#    #+#             */
-/*   Updated: 2024/04/30 17:46:49 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/03 18:00:16 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,3 @@ char	*ft_itoa(int number)
 		*(str) = '-';
 	return (str);
 }
-// int main(int argc, char const *argv[])
-// {
-//     printf("%s",ft_itoa(762));
-//     return (0);
-// }
