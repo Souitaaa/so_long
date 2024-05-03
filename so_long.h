@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 18:09:36 by csouita           #+#    #+#             */
-/*   Updated: 2024/05/02 02:30:37 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/03 03:36:49 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include <fcntl.h>
-# include <mlx.h>
+# include "../minilibx-linux/mlx.h"
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>

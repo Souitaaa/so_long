@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:43:38 by csouita           #+#    #+#             */
-/*   Updated: 2024/05/02 02:00:45 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/03 03:32:56 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,26 +66,27 @@ int	main(int ac, char *av[])
 {
 	t_data	data;
 
-	(void)ac;
-	data.moves = 0;
-	data.player_height = 0;
-	data.player_width = 0;
-	ft_memset(&data, 0, sizeof(t_data));
-	data.height = 0;
-	check_path(av[1]);
-	map_check(av[1], &data);
-	map_width(av[1], &data);
-	map_rectangle(&data);
-	map_arr(av[1], &data);
-	check_map_border(&data);
-	store_content(&data);
-	check_exist_items(&data);
-	fill_items(&data);
-	player_position(&data);
-	flood_fill(&data, data.player_height, data.player_width);
-	flood_fill_checker(&data);
-	draw_map(&data);
-	mlx_key_hook(data.mlx_window, move_player, &data);
-	mlx_hook(data.mlx_window, 17, 0, close_window, &data);
-	mlx_loop(data.mlx_ptr);
+	if (ac == 2)
+	{
+		data.moves = 0;
+		data.player_height = 0;
+		data.player_width = 0;
+		ft_memset(&data, 0, sizeof(t_data));
+		data.height = 0;
+		check_path(av[1]);
+		map_check(av[1], &data);
+		map_width(av[1], &data);
+		map_rectangle(&data);
+		map_arr(av[1], &data);
+		check_map_border(&data);
+		(store_content(&data), check_exist_items(&data));
+		(fill_items(&data), player_position(&data));
+		flood_fill(&data, data.player_height, data.player_width);
+		(flood_fill_checker(&data), draw_map(&data));
+		mlx_key_hook(data.mlx_window, move_player, &data);
+		mlx_hook(data.mlx_window, 17, 0, close_window, &data);
+		mlx_loop(data.mlx_ptr);
+	}
+	else
+		(write(1, "too many arguments", 19), exit(1));
 }

@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:43:18 by csouita           #+#    #+#             */
-/*   Updated: 2024/05/02 02:30:43 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/03 01:47:15 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	clear(t_data *data)
 	mlx_destroy_display(data->mlx_ptr);
 	free_map(data);
 	free(data->mlx_ptr);
-	write(1, "tssawr ghalt", 13);
+	write(1, "error \n .xpm not found", 23);
 	exit(1);
 }
 
