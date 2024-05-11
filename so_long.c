@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:43:38 by csouita           #+#    #+#             */
-/*   Updated: 2024/05/03 18:02:41 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/11 20:10:31 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	map_rectangle(t_data *data)
 {
-	int	i;
-
-	i = 0;
 	if (data->height == data->width)
 	{
 		write(1, "Error\nmap is not rectangular", 29);

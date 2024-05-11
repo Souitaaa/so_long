@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:35:58 by csouita           #+#    #+#             */
-/*   Updated: 2024/05/03 18:00:10 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/11 19:39:10 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	close_window(t_data *data)
 	mlx_destroy_display(data->mlx_ptr);
 	free_map(data);
 	free(data->mlx_ptr);
-	exit(0);
+	exit(1);
 	return (0);
 }
 

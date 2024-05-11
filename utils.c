@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 15:43:18 by csouita           #+#    #+#             */
-/*   Updated: 2024/05/03 18:03:03 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/04 02:38:58 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ int	draw_map(t_data *data)
 	int	j;
 
 	i = 0;
-	mlx_clear_window(data->mlx_ptr, data->mlx_window);
 	while (i < data->height)
 	{
 		j = 0;

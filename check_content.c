@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 16:34:47 by csouita           #+#    #+#             */
-/*   Updated: 2024/05/03 18:10:19 by csouita          ###   ########.fr       */
+/*   Updated: 2024/05/11 19:54:29 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@ void	check_exist_items(t_data *data)
 	int	i;
 	int	j;
 
-	j = 0;
 	i = 0;
 	while (i < data->height)
 	{
 		j = 0;
-		while (j > data->width)
+		while (j < data->width)
 		{
-			if (data->map[i][j] != 'P' || data->map[i][j] != 'C'
-				|| data->map[i][j] != 'E')
+			if (data->map[i][j] != 'P' && data->map[i][j] != 'C'
+				&& data->map[i][j] != 'E' && data->map[i][j] != '1'
+				&& data->map[i][j] != '0')
 			{
 				write(1, "Error\nerror in items", 21);
 				free_map(data);
