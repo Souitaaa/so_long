@@ -15,8 +15,22 @@
 void	fill_items(t_data *data)
 {
 	data->mlx_ptr = mlx_init();
+	if (!data->mlx_ptr)
+	{
+		free_map(data);
+		ft_putstr("Error\ncannot open X11 display\n");
+		exit(1);
+	}
 	data->mlx_window = mlx_new_window(data->mlx_ptr, data->width * 60,
 			data->height * 60, "So_long");
+	if (!data->mlx_window)
+	{
+		mlx_destroy_display(data->mlx_ptr);
+		free(data->mlx_ptr);
+		free_map(data);
+		ft_putstr("Error\ncannot create window\n");
+		exit(1);
+	}
 	data->raven = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/raven.xpm",
 			&data->image_width, &data->image_height);
 	data->exit = mlx_xpm_file_to_image(data->mlx_ptr, "./textures/exit.xpm",

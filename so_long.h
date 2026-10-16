@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include <fcntl.h>
-# include "../minilibx-linux/mlx.h"
+# include "mlx.h"
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
